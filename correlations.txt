@@ -1,0 +1,287 @@
+column of analysis - AkutliggareID
+   index  Correlation
+0  PasID     0.999313
+column of analysis - PasID
+           index  Correlation
+0  AkutliggareID     0.999313
+column of analysis - BesoksorsakID
+                 index  Correlation
+0  ForstaBesoksorsakID     0.962704
+column of analysis - ForstaBesoksorsakID
+           index  Correlation
+0  BesoksorsakID     0.962704
+column of analysis - FlyttadTillVardenhetID
+                         index  Correlation
+0  ForstaSlutenvardVardenhetID     0.692742
+1            ForstaVardenhetID     0.465566
+2  SenasteAnsvarigaVardenhetID     0.472706
+3                  VardenhetID     0.472706
+column of analysis - FlyttadTillLokationID
+             index  Correlation
+0  TidTillIntensiv      0.57482
+column of analysis - VardenhetID
+                         index  Correlation
+0      AntalInvolveradeEnheter     0.409895
+1     AntalKonsulteradeEnheter     0.434555
+2       FlyttadTillVardenhetID     0.472706
+3            ForstaVardenhetID     0.894408
+4  SenasteAnsvarigaVardenhetID     1.000000
+column of analysis - ForstaVardenhetID
+                            index  Correlation
+0         AntalInvolveradeEnheter     0.431832
+1        AntalKonsulteradeEnheter     0.463663
+2          FlyttadTillVardenhetID     0.465566
+3     SenasteAnsvarigaVardenhetID     0.894408
+4  SenasteKonsulteradeVardenhetID     0.520417
+column of analysis - ForstaSlutenvardVardenhetID
+                    index  Correlation
+0  FlyttadTillVardenhetID     0.692742
+column of analysis - SenasteKonsulteradeVardenhetID
+                         index  Correlation
+0            ForstaVardenhetID     0.520417
+1  SenasteAnsvarigaVardenhetID     0.455224
+2                  VardenhetID     0.455224
+column of analysis - SenasteAnsvarigaVardenhetID
+                            index  Correlation
+0         AntalInvolveradeEnheter     0.409895
+1        AntalKonsulteradeEnheter     0.434555
+2          FlyttadTillVardenhetID     0.472706
+3               ForstaVardenhetID     0.894408
+4  SenasteKonsulteradeVardenhetID     0.455224
+column of analysis - PrioritetInID
+             index  Correlation
+0    PrioritetUtID     0.815936
+1  TidTillIntensiv     0.417364
+column of analysis - PrioritetUtID
+                index  Correlation
+0  GCSVerbaltStatusID     0.400125
+1       PrioritetInID     0.815936
+2     TidTillIntensiv     0.463145
+column of analysis - ForstaAnsvarigaLakareID
+                      index  Correlation
+0  SenasteAnsvarigaLakareID     0.887147
+column of analysis - SenasteAnsvarigaLakareID
+                     index  Correlation
+0  ForstaAnsvarigaLakareID     0.887147
+column of analysis - RegistreringsstatusID
+     index  Correlation
+0  AntalUt    -0.556762
+1     Klar    -1.000000
+column of analysis - AlderID
+                      index  Correlation
+0  AndningsfrekvensStatusID    -0.430513
+1  AntalDiagnoserSlutenvard     0.488779
+2        PTroponinTStatusID    -0.420924
+column of analysis - AndningsfrekvensStatusID
+     index  Correlation
+0  AlderID    -0.430513
+column of analysis - BlodtryckSystolisktOvreStatusID
+                               index  Correlation
+0  BlodtryckDiastolisktNedreStatusID     0.542658
+column of analysis - BlodtryckDiastolisktNedreStatusID
+                             index  Correlation
+0  BlodtryckSystolisktOvreStatusID     0.542658
+column of analysis - GCSOgonoppningStatusID
+                         index  Correlation
+0         GCSMotorisktStatusID     0.702804
+1             GCSTotalStatusID     0.750284
+2           GCSVerbaltStatusID     0.702307
+3  MedvetandegradRettsStatusID    -0.728671
+column of analysis - GCSMotorisktStatusID
+                         index  Correlation
+0       GCSOgonoppningStatusID     0.702804
+1             GCSTotalStatusID     0.679352
+2           GCSVerbaltStatusID     0.725363
+3  MedvetandegradRettsStatusID    -0.658883
+column of analysis - GCSVerbaltStatusID
+                         index  Correlation
+0         GCSMotorisktStatusID     0.725363
+1       GCSOgonoppningStatusID     0.702307
+2             GCSTotalStatusID     0.882798
+3  MedvetandegradRettsStatusID    -0.758306
+4                PrioritetUtID     0.400125
+column of analysis - PulsfrekvensRegelbundenStatusID
+                              index  Correlation
+0  PulsfrekvensOregelbundenStatusID     0.423393
+column of analysis - PulsfrekvensOregelbundenStatusID
+                             index  Correlation
+0  PulsfrekvensRegelbundenStatusID     0.423393
+column of analysis - MedvetandegradRettsStatusID
+                    index  Correlation
+0    GCSMotorisktStatusID    -0.658883
+1  GCSOgonoppningStatusID    -0.728671
+2        GCSTotalStatusID    -0.817310
+3      GCSVerbaltStatusID    -0.758306
+column of analysis - GCSTotalStatusID
+                         index  Correlation
+0         GCSMotorisktStatusID     0.679352
+1       GCSOgonoppningStatusID     0.750284
+2           GCSVerbaltStatusID     0.882798
+3  MedvetandegradRettsStatusID    -0.817310
+4              TidTillIntensiv     0.420277
+column of analysis - PTroponinTStatusID
+     index  Correlation
+0  AlderID    -0.420924
+column of analysis - Klar
+                   index  Correlation
+0                AntalUt     0.559449
+1  RegistreringsstatusID    -1.000000
+column of analysis - TidTillLakareMinuter
+                            index  Correlation
+0         HandlaggningstidMinuter    -0.468218
+1           LabTidTillProvtagning     0.442721
+2            RontgenTidTillRemiss     0.813857
+3  RontgenTidTillUndersokningSlut     0.693320
+4           VantetidTriageMinuter     0.500372
+column of analysis - VistelsetidMinuter
+                     index  Correlation
+0   AntalEjKlarInom8Timmar     0.494163
+1     AntalKlarInom4Timmar    -0.600389
+2  HandlaggningstidMinuter     0.651017
+3    LabTidTillProvtagning     0.446257
+4     RontgenTidTillRemiss     0.675708
+column of analysis - VistelsetidPaborjadeTimmar
+                     index  Correlation
+0   AntalEjKlarInom8Timmar     0.495370
+1     AntalKlarInom4Timmar    -0.606186
+2  HandlaggningstidMinuter     0.647111
+3    LabTidTillProvtagning     0.443801
+4     RontgenTidTillRemiss     0.673065
+column of analysis - VantetidTriageMinuter
+                            index  Correlation
+0            LabTidTillAnkomstLab     0.580648
+1            LabTidTillForstaSvar     0.572358
+2           LabTidTillProvtagning     0.618037
+3            RontgenTidTillRemiss     0.610736
+4  RontgenTidTillUndersokningSlut     0.524772
+column of analysis - HandlaggningstidMinuter
+                            index  Correlation
+0          AntalEjKlarInom8Timmar     0.422783
+1            AntalKlarInom4Timmar    -0.453796
+2  RontgenTidTillUndersokningSlut     0.466517
+3            TidTillLakareMinuter    -0.468218
+4              VistelsetidMinuter     0.651017
+column of analysis - RontgenTidTillRemiss
+                            index  Correlation
+0    AntalTillLakareInom40Minuter    -0.410166
+1            LabTidTillAnkomstLab     0.538797
+2            LabTidTillForstaSvar     0.535970
+3           LabTidTillProvtagning     0.580939
+4  RontgenTidTillUndersokningSlut     0.886733
+column of analysis - RontgenTidTillUndersokningSlut
+                     index  Correlation
+0   AntalEjKlarInom8Timmar     0.496825
+1     AntalKlarInom4Timmar    -0.472656
+2  HandlaggningstidMinuter     0.466517
+3     LabTidTillAnkomstLab     0.474245
+4     LabTidTillForstaSvar     0.472064
+column of analysis - LabTidTillProvtagning
+                            index  Correlation
+0            LabTidTillAnkomstLab     0.416826
+1            LabTidTillForstaSvar     0.419836
+2            RontgenTidTillRemiss     0.580939
+3  RontgenTidTillUndersokningSlut     0.511474
+4            TidTillLakareMinuter     0.442721
+column of analysis - LabTidTillForstaSvar
+                            index  Correlation
+0            LabTidTillAnkomstLab     0.995304
+1           LabTidTillProvtagning     0.419836
+2            RontgenTidTillRemiss     0.535970
+3  RontgenTidTillUndersokningSlut     0.472064
+4           VantetidTriageMinuter     0.572358
+column of analysis - LabTidTillAnkomstLab
+                            index  Correlation
+0            LabTidTillForstaSvar     0.995304
+1           LabTidTillProvtagning     0.416826
+2            RontgenTidTillRemiss     0.538797
+3  RontgenTidTillUndersokningSlut     0.474245
+4           VantetidTriageMinuter     0.580648
+column of analysis - Intensiv
+                       index  Correlation
+0  AntalIntensivInom72Timmar            1
+column of analysis - TidTillIntensiv
+                   index  Correlation
+0  FlyttadTillLokationID     0.574820
+1       GCSTotalStatusID     0.420277
+2     GCSVerbaltStatusID     0.414979
+3          PrioritetInID     0.417364
+4          PrioritetUtID     0.463145
+column of analysis - AntalIntensivInom72Timmar
+      index  Correlation
+0  Intensiv            1
+column of analysis - AntalUt
+                   index  Correlation
+0                   Klar     0.559449
+1  RegistreringsstatusID    -0.556762
+column of analysis - AntalInvolveradeEnheter
+                         index  Correlation
+0        AntalAnsvarigaEnheter     0.666168
+1     AntalKonsulteradeEnheter     0.844615
+2            ForstaVardenhetID     0.431832
+3  SenasteAnsvarigaVardenhetID     0.409895
+4                  VardenhetID     0.409895
+column of analysis - AntalAnsvarigaEnheter
+                     index  Correlation
+0  AntalInvolveradeEnheter     0.666168
+column of analysis - AntalKonsulteradeEnheter
+                         index  Correlation
+0      AntalInvolveradeEnheter     0.844615
+1            ForstaVardenhetID     0.463663
+2  SenasteAnsvarigaVardenhetID     0.434555
+3                  VardenhetID     0.434555
+column of analysis - AntalTillLakareInom40Minuter
+                  index  Correlation
+0  RontgenTidTillRemiss    -0.410166
+column of analysis - AntalKlarInom4Timmar
+                            index  Correlation
+0         HandlaggningstidMinuter    -0.453796
+1  RontgenTidTillUndersokningSlut    -0.472656
+2              VistelsetidMinuter    -0.600389
+3      VistelsetidPaborjadeTimmar    -0.606186
+column of analysis - AntalEjKlarInom8Timmar
+                            index  Correlation
+0   AntalVistelsetid8Till12Timmar     0.907342
+1         HandlaggningstidMinuter     0.422783
+2  RontgenTidTillUndersokningSlut     0.496825
+3              VistelsetidMinuter     0.494163
+4      VistelsetidPaborjadeTimmar     0.495370
+column of analysis - AntalVistelsetid8Till12Timmar
+                    index  Correlation
+0  AntalEjKlarInom8Timmar     0.907342
+column of analysis - AntalBesok
+                         index  Correlation
+0      AntalDiagnoserOppenvard     0.801499
+1  AntalSlutenvardInom12Timmar    -0.741057
+2   AntalSlutenvardInom6Timmar    -0.743095
+column of analysis - AntalAvlidnaInom7Dagar
+                     index  Correlation
+0  AntalAvlidnaInom30Dagar     0.619011
+column of analysis - AntalAvlidnaInom30Dagar
+                    index  Correlation
+0  AntalAvlidnaInom7Dagar     0.619011
+column of analysis - AntalSlutenvardInom6Timmar
+                         index  Correlation
+0                   AntalBesok    -0.743095
+1               AntalDiagnoser     0.465926
+2      AntalDiagnoserOppenvard    -0.601525
+3  AntalSlutenvardInom12Timmar     0.992695
+column of analysis - AntalSlutenvardInom12Timmar
+                        index  Correlation
+0                  AntalBesok    -0.741057
+1              AntalDiagnoser     0.461554
+2     AntalDiagnoserOppenvard    -0.599476
+3  AntalSlutenvardInom6Timmar     0.992695
+column of analysis - AntalDiagnoserOppenvard
+                         index  Correlation
+0                   AntalBesok     0.801499
+1  AntalSlutenvardInom12Timmar    -0.599476
+2   AntalSlutenvardInom6Timmar    -0.601525
+column of analysis - AntalDiagnoserSlutenvard
+            index  Correlation
+0         AlderID     0.488779
+1  AntalDiagnoser     0.981268
+column of analysis - AntalDiagnoser
+                         index  Correlation
+0     AntalDiagnoserSlutenvard     0.981268
+1  AntalSlutenvardInom12Timmar     0.461554
+2   AntalSlutenvardInom6Timmar     0.465926
