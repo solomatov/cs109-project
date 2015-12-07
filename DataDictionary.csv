@@ -1,0 +1,110 @@
+Field SV,Field ENG,Field description,Assumed timings
+PatientID,PatientID,Patient Id,Case start time
+DokumentID,DocumentID,Document Id,Case start time
+AkutliggareID,ERRecordID,Record ,Case start time
+PasID,PasID,,Case start time
+AnkomstsattID,WayOfArrivalID,Way of arrival Id,Case start time
+ProblemorsakID,ProblemCauseID,Problem cause Id,Case start time
+BesoksorsakID,VisitCauseID,Visit cause Id,Case start time
+ForstaBesoksorsakID,FirstVisitCauseID,First visit cause Id,Case start time
+FlyttadTillVardenhetID,MovedToCareUnitID,Moved to care unit Id,Case end time
+FlyttadTillLokationID,MovedToLocationID,Move to location Id,Case end time
+VardbehovID,CareNeedID,Care need Id,Case end time
+VardenhetID,CareUnitID,Care unit Id,Case start time
+ForstaVardenhetID,FirstCareUnitID,First care unit Id,Case end time
+ForstaSlutenvardVardenhetID,FirstInpatientCareUnitID,First inpatient care unit Id,Case end time
+AndraSlutenvardVardenhetID,SecondInpatioentCareUnitID,Second inpatient care unit Id,Case end time
+SenasteKonsulteradeVardenhetID,LatestConsultedCareunitID,Latest consulted care unit Id,Case end time
+SenasteAnsvarigaVardenhetID,LatestResponsibleCareUnitID,Latest responsible care unit Id,Case end time
+PrioritetInID,PriorityInID,First priority status (In) Id,20 min mean
+PrioritetUtID,PriorityOutID,Last priority status(Out) Id,Case end time
+RegistreringsstatusID,ResgistrationStatusID,Registration status Id,Case start time
+AlderID,AgeID,Age Id,Case start time
+BesokstypID,VisitTypeID,Visit type Id,Case start time
+DiagnoskodOppenvard,DiagnoisCodeOutpatientCare,Diagnois code Outpatient care,Case end time
+DiagnoskodSlutenvard,DiagnosisCodeInpatientCare,Diagnosis code Inpatient care,Case end time
+Diagnoskod,DiagnosisCode,Diagnosis code,Case end time
+AndningsfrekvensStatusID,BreathingFrequencyID,Breathing frequency Id,At triage - 20 min mean
+SaturationStatusID,SaturationStatusID,Saturation Status Id,At triage - 20 min mean
+KroppstemperaturStatusID,BodyTemperatureID,Body temperature Id,At triage - 20 min mean
+BlodtryckSystolisktOvreStatusID,BloodpressureSystolicUpperID,Bllodpressure Systolic Upper Id,At triage - 20 min mean
+BlodtryckDiastolisktNedreStatusID,BloodpressureSystolicLowerID,Blood pressure Systolic lower Ud,At triage - 20 min mean
+GCSOgonoppningStatusID,GCSEyeopeningStatusID,GCS Eyeopening Status Id,At triage - 20 min mean
+GCSMotorisktStatusID,GCSMotoricalStatusID,GCS Motorical Status Id,At triage - 20 min mean
+GCSVerbaltStatusID,GCSVerbalStatusID,GCS Verbal Status Id,At triage - 20 min mean
+StridorStatusID,StridorStatusID,Stridor Status Id,At triage - 20 min mean
+PulsfrekvensRegelbundenStatusID,PulsefrequencyRegularID,Pulse frequency regular Id,At triage - 20 min mean
+PulsfrekvensOregelbundenStatusID,PulsefrequencyIrregularID,Pulse frequency irregular Id,At triage - 20 min mean
+MedvetandegradRettsStatusID,ConsciousnessRettsScaleStatusID,Consiuossness retts scale status Id,At triage - 20 min mean
+SaturationMedSyrgasStatusID,SaturationWithOxygenStatusID,Saturation with oxygen status id,At triage - 20 min mean
+GCSTotalStatusID,GCSTotalStatusID,GCS Total status Id,At triage - 20 min mean
+KrampanfallStatusID,KrampsStatusID,Kramps Status Id,At triage - 20 min mean
+LuftvagsstatusRettsStatusID,AirwaysRettsScaleStatusID,Airways Retts scale status id,At triage - 20 min mean
+BLeukocyterStatusID,B_LeukocytesStatusID,Lab result:B Leukocytes Status,Labb time mean to be calculated
+BErytrocyterStatusID,B_ErytrocytesStatusID,Lab result:B Erytrocytes Status,Labb time mean to be calculated
+BHemoglobinStatusID,B_HemoglobinStatusID,Lab result:B Hemoglobin Status,Labb time mean to be calculated
+BEVFStatusID,B_EVFStatusID,Lab result: B EVF Status,Labb time mean to be calculated
+ErcBMCVStatusID,Erc_BMCVStatusID,Lab result: Erc BMCV Status,Labb time mean to be calculated
+ErcBMCHStatusID,Erc_BMCHStatusID,Lab result: Erc BMCH Status,Labb time mean to be calculated
+ErcBMCHCStatusID,Erc_BMCCStatusID,Lab result: Erc BMCC Status,Labb time mean to be calculated
+BTrombocyterStatusID,B_TrombocytesStatusID,Lab result: B Trombocytes  Status,Labb time mean to be calculated
+PGlukosStatusID,P_GlocuseStatusID,Lab result: P Glocuse Status,Labb time mean to be calculated
+PCRPStatusID,P_CRPStatusID,Lab result: P CRP Status,Labb time mean to be calculated
+PNatriumStatusID,P_NatriumStatusID,Lab result: P Natrium Status,Labb time mean to be calculated
+PKaliumStatusID,P_KaliumStatusID,Lab result: P Kalium Status,Labb time mean to be calculated
+PKreatininStatusID,P_KreatinStatusID,Lab result: P Kreatin Status,Labb time mean to be calculated
+PTroponinTStatusID,P_TroponinStatusID,Lab result: P Troponin Status,Labb time mean to be calculated
+AnsvarigtVardlag,ResponsibleCareTeamID,Responsible care team,Case end time
+KonsulteratVardlag,CosnultedCareTeamID,Consulted care team,Case end time
+Klar,Done,Done,Case end time
+TroligInskrivning,ExpectedToBecomeInpatient,Expected inpatient,Probably at triage but fields is not mandatory to use
+Produkttyp,ProductType,Product type,Case end time
+Produktkod,ProductCode,Product code,Case end time
+Ankomsttidpunkt,ArrivaltimeToER,Arrival time (to ER),Case start time
+Utskrivningstidpunkt,DeparturetimeFromER,Departure time (from ER),Case end time
+TidregistreringUtTill,DepartureRecordingTime,Departure registered Time,Case end time
+ForstaAnsvarigaLakareTidpunkt,FirstResponsibleDoctorTimestamp,First physician Time,Mean to be calculated
+ForstaSkoterskaTidpunkt,FirstNureTimestamp,First nurse Time,Mean to be calculated
+SenasteAnsvarigaLakareTidpunkt,LatestDoctorTimestamp,Latest physician time,Case end time
+SenasteKonsulteradeVardenhetTidpunkt,LatestConsultedCareunitTimestamp,Latest consulted care unit time,Case end time
+SenasteAnsvarigaVardenhetTidpunkt,LatestResponsiblecareunitTimestamp,Latest responsible care unit time,Case end time
+TidTillLakareMinuter,TimeUntilMeetingDoctorInMinutes,time until meeting DR,Mean to be calculated
+VistelsetidMinuter,TimeofStayInMinutes,stay in minutes,Case end time
+VistelsetidPaborjadeTimmar,TimeofStayInHours,stay in hours,Case end time
+VantetidTriageMinuter,TimeUntilTriageInMinutes,waiting time until triage,20 min mean
+HandlaggningstidMinuter,CasehandlingInMinutes,case handling minutes,Case end time
+Rontgen,Xray,Xray,Mean to be calculated
+RontgenTidTillRemiss,XrayTimeUntilReferral,xray time until remittance,Mean to be calculated
+RontgenTidTillUndersokningSlut,XrayTimeUntilCompleted,xray time until xray done,Mean to be calculated
+RontgenTidTillForstaSvar,XrayTimeUntilfirstResponse,xray time until first response,Mean to be calculated
+Lab,Lab,Labb,Mean to be calculated
+LabTidTillProvtagning,LabTimeUntilTesting,Lab Time until tested,Mean to be calculated
+LabTidTillForstaSvar,LabTimeUntilFirstResponse,Lab time to first response,Mean to be calculated
+LabTidTillAnkomstLab,LabTimeUntilSampleArrivalAtLab,Lab arraival to lab,Mean to be calculated
+Intensiv,IntensiveCare,Intensive care?,Case end time
+TidTillIntensiv,TimeToIntensiveCare,Time to intensive care,Case end time
+AntalIntensivInom72Timmar,IntensiveCareWith72h,Intesive care with 72h?,Post case end time
+AntalIn,InCount,In?,Case start time
+AntalUt,OutCount,out?,Case end time
+AntalInvolveradeEnheter,NumberOfInvolvedCareunits,Invloved care units,Case end time
+AntalAnsvarigaEnheter,NumberOfResponsibleCareunits,Involved responsible units,Case end time
+AntalKonsulteradeEnheter,NumberOfConsultedUnits,Involved consulted units,Case end time
+AntalTillLakareInom40Minuter,ToPhysicianWith40minutes,To physician within 40 minutes,Case end time
+AntalKlarInom4Timmar,ReadyWith4h,ready with 4 hours,4h max
+AntalEjKlarInom8Timmar,NotReadyWithin8h,Not ready within 8 hours,min 8h
+AntalVistelsetid8Till12Timmar,Stay8-12h,8-12h,12h
+AntalVistelsetid12Till16Timmar,Stay12-16h,12-16h,16h
+AntalVistelsetidOver16Timmar,StayMoreThan16h,more than 16h,16h
+AntalUtanforRettsTidsriktlinje,OutsideRettsTimeGuidelines,outside retts time estimates,Case end time should probably be seen  by doctor time
+AntalAterbesokInom72Timmar,ReadmittanceWith72h,readmittance with 72h,Post case end time
+AntalBesok,NumberOfVisits,number of visits,Case start time
+AntalAvlidnaInom7Dagar,DeceasedWithin7days,deceased within 7 days,Post case end time
+AntalAvlidnaInom30Dagar,DeceasedWithin30days,deceased within 30 days,Post case end time
+AntalSlutenvardInom6Timmar,OutpatientWithin6h,Outpatient within 6 h,Post case end time
+AntalSlutenvardInom12Timmar,OutpatientWithin12h,Outpatient within 12 h,Post case end time
+AntalDiagnoserOppenvard,NumberOfOutpatientDiagnosis,number of outpatient diagnosis,Case end time
+AntalDiagnoserSlutenvard,NumberOfInpatientDiagnosis,number of inpatient diagnosis,Case end time
+AntalDiagnoser,NumberOfDiagnosis,number of diagnosis,Case end time
+Alder,Age,age,Case start time
+SenastUppdaterad,LatestUpdate,latest update,N/A
+AntalOvernattningar,StayoverPatient,stayover patient?,min 8h
