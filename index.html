@@ -1,10 +1,70 @@
 <!doctype html>
 <html>
 <head>
-  <title>ER Project Page</title>
+  <title>ER Project</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <style type="text/css">
+</style>
+
 </head>
-<body>
+<body class="container">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <span class="navbar-brand">ER Project</span>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li><a href="#Problem">Problem</a></li>
+          <li><a href="#EDA">EDA</a></li>
+          <li><a href="#Model">Model</a></li>
+          <li><a href="#Conclusions">Conclusions</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <h1>ER Project</h1>
+    <p>Using machine learning methods is it possible to predict as early as possible if a person coming into ER will require hospitalization?</p>
+  </div>
+
+
+  <h1 id="Problem">Problem</h1>
+  <p>
+    The main dataset is the ER - log, also called akutliggaren. In the ER
+    log patients are tracked from when they enter the ER until they exit the
+    ER. The data in the ER log have been extracted from the hospital's main
+    system for keeping electronic medical records and covers the majority of
+    the ER wards in the reception area. An ETL process extracts data from the
+    source system every night and stores the extract in Microsoft SQL server.
+    For use in this project data has then been exporeted to pipe separated
+    text files that can be directly imported in Python.
+  </p>
+  <p>
+    The exact features of the ER log can be found in the projects data
+    dictionary. One of the more important fields of the ER log is the field
+    First in-patient care unit (ForstaSlutenvardVardenhetID) , which tells us
+    if a person has become an in-patient in connection with the recorded, in
+    the ER-log, visit and that field also gives us the name and type of the
+    ward.
+  </p>
+
+  <h1 id="EDA">Exploratory Data Analysis</h1>
+  <p>
+  </p>
+
+  <h1 id="Model">Model</h1>
+  <p>
+  </p>
+
+  <h1 id="Conclusions">Conclusions</h1>
+  <p>
+  </p>
 
 </body>
-
 </html>
