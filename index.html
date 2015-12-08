@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>ER Project</title>
+  <title>Can you trust doctor Robot?</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -19,52 +19,162 @@
       </div>
       <div>
         <ul class="nav navbar-nav">
-          <li><a href="#Problem">Problem</a></li>
-          <li><a href="#EDA">EDA</a></li>
-          <li><a href="#Model">Model</a></li>
-          <li><a href="#Conclusions">Conclusions</a></li>
+          <li><a href="#Intro">Introduction</a></li>
+          <li><a href="#Method">Method</a></li>
+          <li><a href="#Analysis">Analysis</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <div class="jumbotron">
-    <h1>ER Project</h1>
-    <p>Using machine learning methods is it possible to predict as early as possible if a person coming into ER will require hospitalization?</p>
+    <h1>Can you trust doctor Robot?</h1>
+    <p>
+      It's late in the week and work is piling up. You run down the escalator to catch the northbound
+      tube. Anchovised with your fellow commuters you catch your breath when you feel a sudden chest
+      pain. At the same time you get nauesous and your vision just blurs until you pass out.
+    </p>
+    <p>
+      You wake up just as the ambulance enters Central ER, feeling a little dizzy you still have all your
+      senses. At arrival you are welcomed by a shiny new doctor robot from Healthy Hearts Tech. A paramedic
+      takes a brief look at you and adjusts a bar on the robots touchscreen brightly labeled ROC
+      sensitivity before running to the next patient. As the robots commences it's examination of you
+      the paramedic leaves and you get some final advice: "If it starts to stutter just press the big
+      red button.
+    </p>
   </div>
 
+  <h1 id="Intro">Project Introduction</h1>
+  <h2>Brief</h2>
+  <p>
+    When patient arrives into a hospital's ER, medical personnel has important decisions to make. Some
+    patients should be discharged immediately, some could wait, and some should be attended by a doctor
+    immediately.
+  </p>
+  <p>
+    Here's a sample dashboard that is displayed on a large wall screen in the ER department. The dashboard
+    shows the number patients on each workflow stage.
+  </p>
+  <img src="images/screen.png" width="900px" />
+  <p>
+    The stages are the following:
+  </p>
+  <ul>
+    <li>Waiting</li>
+    <li>Present
+      <ul>
+        <li>Present: More than 8h</li>
+        <li>Ready but in need of further hospital care</li>
+      </ul>
+    </li>
+  </ul>
 
-  <h1 id="Problem">Problem</h1>
+
+  <h2>Our Goals</h2>
   <p>
-    The main dataset is the ER - log, also called akutliggaren. In the ER
-    log patients are tracked from when they enter the ER until they exit the
-    ER. The data in the ER log have been extracted from the hospital's main
-    system for keeping electronic medical records and covers the majority of
-    the ER wards in the reception area. An ETL process extracts data from the
-    source system every night and stores the extract in Microsoft SQL server.
-    For use in this project data has then been exporeted to pipe separated
-    text files that can be directly imported in Python.
-  </p>
-  <p>
-    The exact features of the ER log can be found in the projects data
-    dictionary. One of the more important fields of the ER log is the field
-    First in-patient care unit (ForstaSlutenvardVardenhetID) , which tells us
-    if a person has become an in-patient in connection with the recorded, in
-    the ER-log, visit and that field also gives us the name and type of the
-    ward.
+    We want to use machine learning methods to predict as early as possible whether a person coming into ER
+    will require hospitalization. There's a trade off here. On one hand, we want to minimize a number of hospitalized
+    patients, hospitalization is very expensive and saving money will let the hospital to provide care in more
+    important areas. On the other hand, we don't want to send home a patient who will have a complication, or worse
+    die because of this. Human life and health are priceless.
   </p>
 
-  <h1 id="EDA">Exploratory Data Analysis</h1>
+  <h1 id="Method">Method</h1>
+  <h2>Data Gathering</h2>
   <p>
+    Our data set is the ER log, also called akutliggaren.  In the ER log patients are tracked from when
+    they enter the ER until they exit the ER. The data in the ER log have been extracted from the hospital's
+    main system for  keeping electronic medical records and covers the majority of the ER wards in the
+    reception area.
+  </p>
+  <h2>EDA</h2>
+  <p>
+    The Er Log the project has access to has 100+ fields and one defensive initial idea are to focus on the triage
+    data. The first examination plus the medical history of the patient are what nurses and doctor are using to assess
+    the status of a patient and also to give a patient an initial priority. Many Swedish hospital is using Retts
+    (<a href="http://predicare.se/en/om-retts/">http://predicare.se/en/om-retts/</a>) decision support system for emergency medicine when assessing the patients and
+    at the time of assessment a number of vital parameters are collected.
+  </p>
+  <p>
+    In that way the project piggy rides on the domain knowledge of the organisation and try to use features that they
+    use. We will see if that is a good or bad idea, but we can always extend with more features later on. We only have
+    access to the ER log and not the medical history of the patients and there already from the beginning we have some
+    limitations that most probably will affect the precision of our predictions. In addition to that we do not get the
+    “touch and feel” a nurse and doctor get’s when talking to a patient, they can use their hands to feel body
+    temperature, sweating and pinpoint things like abdominal pains etc.
+  </p>
+  <p>The vital parameters that we have access to are:</p>
+  <ul>
+    <li>Breathing frequency</li>
+    <li>Saturation Status</li>
+    <li>Body temperature</li>
+    <li>Bllodpressure Systolic Upper</li>
+    <li>Blood pressure Systolic Lower</li>
+    <li>GCS Eye opening Status</li>
+    <li>GCS Motoric Status</li>
+    <li>GCS Verbal Status</li>
+    <li>Stridor Status</li>
+    <li>Pulse frequency regular</li>
+    <li>Pulse frequency irregular</li>
+    <li>Consciousness Retts scale status</li>
+    <li>Saturation with oxygen status</li>
+  </ul>
+  <p>
+    In addition to that we will use patient Age. It seems that ER visits highly depend on the month, day of week,
+    and hour of day, so we will add these features as well.
+  </p>
+  <p>
+    We aim to predict if a patient will need further care and become an Inpatient. We have two categories: Others and
+    Inpatients. Others include people going home and outpatients. The main difference between an outpatient and an
+    inpatient from a hospital logistics perspective is that the inpatients stays overnight and requires more resources.
+    An outpatient may have an appointment at the hospital for example the following day or a week later for check up but
+    their direct interaction (and use of resources) with the hospital is relatively brief.
+  </p>
+  <p>
+    On this chart we display a
+    bar chart of number of inpatients vs others by year:
+  </p>
+  <img src="images/inpatient-others.png" />
+  <p>
+    As we see, there're much more others than inpatients.
+  </p>
+  <p>
+    On this chart we display histograms of different variables by inpatient/other status:
+  </p>
+  <img src="images/dists.png" />
+  <p>
+    As we see, there's a difference in distribution in almost all variables. This gives us a promise that we can
+    predict whether the patient will be inpatient or outpatient.
+  </p>
+  <h2>Predictions Pipeline</h2>
+  <p>
+    TODO
   </p>
 
-  <h1 id="Model">Model</h1>
+  <h1 id="Analysis">Analysis</h1>
   <p>
+    TODO
+  </p>
+  <h2>Feature Evaluation</h2>
+  <p>
+    TODO
+  </p>
+  <h2>ML Method Selection</h2>
+  <p>
+    TODO
+  </p>
+  <h2>ROC</h2>
+  <p>
+    TODO
+  </p>
+  <h2>Cost Matrix</h2>
+  <p>
+    TODO
   </p>
 
-  <h1 id="Conclusions">Conclusions</h1>
-  <p>
-  </p>
+
+
+
 
 </body>
 </html>
