@@ -180,7 +180,18 @@
 
   <h2>ROC</h2>
   <p>
-    TODO
+    Here's the ROC curve for models which we used:
+  </p>
+  <img src="images/roc.png" />
+  <p>
+    As we see, the worst method are decision trees which is unsurprising. The method has high variance and very
+    susceptible to overfitting. Logistic regression and Linear SVM are substantially better and quite close to
+    each other. Random forest and Gradient Boosting Classifier are the best two, with Gradient Boosting Classifier
+    performing a little bit better than random forest.
+  </p>
+  <p>
+    Overall the best method is Gradient Boosting Classifier. However, the method can be used with different threshold
+    values, and we need to find a value which is the best in some sense. We will cover this in the next section.
   </p>
   <h2>Cost Matrix</h2>
   <p>
