@@ -166,7 +166,28 @@
   </p>
   <h2>Feature Evaluation</h2>
   <p>
-    TODO
+    If we order feature by importance using KBest using f_classif. We got the following top5 features:
+  </p>
+  <ul>
+    <li>AgeID - 23258.7838511</li>
+    <li>BloodpressureSystolicUpperID - 16178.6254018</li>
+    <li>BloodpressureSystolicLowerID - 14223.2129934</li>
+    <li>PulsefrequencyRegularID - 11020.7966351</li>
+    <li>SaturationWithOxygenStatusID - 10664.3865356</li>
+    <li>BreathingFrequencyID - 10321.2302924</li>
+  </ul>
+  <p>
+    If we order feature by weight which random forest assigns to them we got the following top 5 features:
+  </p>
+  <ul>
+    <li>WayOfArrivalID (0.146988)</li>
+    <li>ProblemCauseID (0.109143)</li>
+    <li>VisitCauseID (0.106607)</li>
+    <li>AgeID (0.103987)</li>
+    <li>ArrivalHour (0.099533)</li>
+  </ul>
+  <p>
+    Random forest gives results, which take into account other features, so we would trust it more in this case.
   </p>
   <h2>ML Method Selection</h2>
   <p>
