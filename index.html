@@ -3,19 +3,34 @@
 <head>
   <title>Can you trust doctor Robot?</title>
 
+  <link rel="stylesheet" href="lib/jquery.tocify.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+  <script src="lib/jquery.tocify.min.js"></script>
 
   <style type="text/css">
     .container {
-      padding-bottom: 250px;
+      padding-top: 20px;
+      padding-left: 250px;
+    }
+
+    #toc {
+      margin-top: 20px;
     }
   </style>
 
 </head>
 <body>
+  <div id="toc">
+  </div>
+
+
 <div class="container">
 
+  <!--
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -30,6 +45,8 @@
       </div>
     </div>
   </nav>
+  -->
+
 
   <div class="jumbotron">
     <h1>Can you trust doctor Robot?</h1>
@@ -47,6 +64,7 @@
       red button.
     </p>
   </div>
+
 
   <h1 id="Intro">Project Introduction</h1>
   <h2>Brief</h2>
@@ -226,5 +244,12 @@
     TODO
   </p>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    $('#toc').tocify();
+  });
+</script>
+
 </body>
 </html>
