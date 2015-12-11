@@ -246,7 +246,32 @@
   </p>
   <h2>Cost Matrix</h2>
   <p>
-    TODO
+This is were prediction models make contact with the real world. Putting things in numbers representing hard cash gets peoples attention. We started by collecting some cost data and then settled on case cost if a patient is admitted (In-patient) as our driving factor. 
+</p>
+
+<p>One In-patient case cost is in average 68 000 SEK which is about 8 000 USD. Armed with this we predicted an outcome of each model using our test data and compared this with the actual outcome in a confusion matrix. This confusion matrix served as input to our cost function were we applied the following costs: 
+</p>
+
+<h3>True negatives ( When Actual Other is Predicted as Other )</h3>
+<p>From both patient and hospital this is the best outcome. As a patient you were worried, came to the ER and 4h + a handful tax dollars (well actually about 400 USD) later you were sent home hopefully a little less anxius maybe with an ordination for some pain killers or a referral to an out-patient doctor.</p>
+
+<p>Cost estimate: 0</p>
+
+
+<h3>False negative ( When Actual In-patient is predicted as Other )</h3>
+<p>For the patient this is the worst case. The ER failed to recognize that you need to be hospitalized to get well and after a night in pain you go back to the ER and finally they commit to to a hospital bed, the only thing is that now you feel worse, much worse than yesterday. The cost for this case were discussed to a length, we first set the cost to 0 arguing that from a pure bean counting hospital controllers perspective there is really no additional cost compared to a true positive other than maybe the extra ER visit, in the end we settled on a cost model where the cost for the false negative is a bit higher than for a true positive as most probably the patient will need extra care  due to their late admission to good care and medicine.</p>
+
+<p>Cost estimate: 85 000 SEK (10 000 USD)</p>
+
+<h3>False positive: (When Actual Other is predicted as In-patient)</h3>
+<p>This is not good for either party but it is not as severe as a False negative. We made the assumption that the hospital will discover that the patient is quite alright and then discharge them early. </p>
+
+<p>Cost estimate: 68000 * 25% = 17 000 SEK (2 000 USD )</p>
+
+<h3>True positive: ( When Actual In-patient is predicted as In-patient )</h3>
+<p>This is actually good for the patient but still incurs a cost for the hospital. It's hard to to go into the macro economic effects so we kept to the micro scenario (Hospital economics) and just assigned the average cost for an In-patient case.</p>
+
+<p>Cost estimate: 68 000 SEK (8 000 USD)
   </p>
 </div>
 
