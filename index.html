@@ -109,7 +109,8 @@
     will require hospitalization. There's a trade off here. On one hand, we want to minimize a number of hospitalized
     patients, hospitalization is very expensive and saving money will let the hospital to provide care in more
     important areas. On the other hand, we don't want to send home a patient who will have a complication, or worse
-    die because of this. Human life and health are priceless but with limited resources hard decisions need to be taken and predictive analysis can help with those decisions.
+    die because of this. Human life and health are priceless but with limited resources hard decisions need to be taken
+    and predictive analysis can help with those decisions.
   </p>
 
   <h1 id="Method">Method</h1>
@@ -125,8 +126,9 @@
     The Er Log the project has access to has 100+ fields and one defensive initial idea are to focus on the triage
     data. The first examination plus the medical history of the patient are what nurses and doctor are using to assess
     the status of a patient and also to give a patient an initial priority. Many Swedish hospital is using Retts
-    (<a href="http://predicare.se/en/om-retts/">http://predicare.se/en/om-retts/</a>) decision support system for emergency medicine when assessing the patients and
-    at the time of assessment a number of vital parameters are collected.
+    (<a href="http://predicare.se/en/om-retts/">http://predicare.se/en/om-retts/</a>) decision support system for
+    emergency medicine when assessing the patients and at the time of assessment a number of vital parameters are
+    collected.
   </p>
   <p>
     In that way the project piggy rides on the domain knowledge of the organisation and try to use features that they
@@ -169,7 +171,8 @@
   </p>
   <img src="images/inpatient-others.png" />
   <p>
-    As we see, there're much more Others than Inpatients  which gives us an unbalanced data set with about four Other patienets for every Inpatient.
+    As we see, there're much more Others than Inpatients  which gives us an unbalanced data set with about four Other
+    patienets for every Inpatient.
   </p>
   <p>
     On this chart we display histograms of different variables by inpatient/other status:
@@ -246,36 +249,68 @@
   </p>
   <h2>Cost Matrix</h2>
   <p>
-This is were prediction models make contact with the real world. Putting things in numbers representing hard cash gets peoples attention. We started by collecting some cost data and then settled on case cost if a patient is admitted (In-patient) as our driving factor. 
-</p>
+    This is were prediction models make contact with the real world. Putting things in numbers representing hard cash
+    gets peoples attention. We started by collecting some cost data and then settled on case cost if a patient is
+    admitted (In-patient) as our driving factor.
+  </p>
+  <p>
+    One In-patient case cost is in average 68 000 SEK which is about 8 000 USD. Armed with this we predicted an outcome
+    of each model using our test data and compared this with the actual outcome in a confusion matrix. This confusion
+    matrix served as input to our cost function were we applied the following costs:
+  </p>
 
-<p>One In-patient case cost is in average 68 000 SEK which is about 8 000 USD. Armed with this we predicted an outcome of each model using our test data and compared this with the actual outcome in a confusion matrix. This confusion matrix served as input to our cost function were we applied the following costs: 
-</p>
+  <h3>Patient should be sent home</h3>
+  <p>
+    True negatives ( When Actual Other is Predicted as Other )
+  </p>
+  <p>
+    From both patient and hospital this is the best outcome. As a patient you were worried, came to the ER and 4h + a
+    handful tax dollars (well actually about 400 USD) later you were sent home hopefully a little less anxious maybe
+    with an ordination for some pain killers or a referral to an out-patient doctor.
+  </p>
+  <p>Cost estimate: 0</p>
 
-<h3>Patient should be sent home</h3>
-<p>True negatives ( When Actual Other is Predicted as Other )</p>
-<p>From both patient and hospital this is the best outcome. As a patient you were worried, came to the ER and 4h + a handful tax dollars (well actually about 400 USD) later you were sent home hopefully a little less anxious maybe with an ordination for some pain killers or a referral to an out-patient doctor.</p>
 
-<p>Cost estimate: 0</p>
+  <h3>Patient needs hospitalization but is sent home</h3>
+  <p>
+    False negative ( When Actual In-patient is predicted as Other )
+  </p>
+  <p>
+    For the patient this is the worst case. The ER failed to recognize that you need to be hospitalized to get well and
+    after a night in pain you go back to the ER and finally they commit to to a hospital bed, the only thing is that now
+    you feel worse, much worse than yesterday. The cost for this case were discussed to a length, we first set the cost
+    to 0 arguing that from a pure bean counting hospital controllers perspective there is really no additional cost
+    compared to a true positive other than maybe the extra ER visit, in the end we settled on a cost model where the
+    cost for the false negative is a bit higher than for a true positive as most probably the patient will need extra
+    care  due to their late admission to good care and medicine.
+  </p>
+  <p>
+    Cost estimate: 85 000 SEK (10 000 USD)
+  </p>
 
+  <h3>Patient is hospitalized but should have gone home</h3>
+  <p>
+    False positive: (When Actual Other is predicted as In-patient)
+  </p>
+  <p>
+    This is not good for either party but it is not as severe as a False negative. We made the assumption that the
+    hospital will discover that the patient is quite alright and then discharge them early.
+  </p>
+  <p>
+    Cost estimate: 68000 * 25% = 17 000 SEK (2 000 USD )
+  </p>
 
-<h3>Patient needs hospitalization but is sent home</h3>
-<p>False negative ( When Actual In-patient is predicted as Other )</>
-<p>For the patient this is the worst case. The ER failed to recognize that you need to be hospitalized to get well and after a night in pain you go back to the ER and finally they commit to to a hospital bed, the only thing is that now you feel worse, much worse than yesterday. The cost for this case were discussed to a length, we first set the cost to 0 arguing that from a pure bean counting hospital controllers perspective there is really no additional cost compared to a true positive other than maybe the extra ER visit, in the end we settled on a cost model where the cost for the false negative is a bit higher than for a true positive as most probably the patient will need extra care  due to their late admission to good care and medicine.</p>
-
-<p>Cost estimate: 85 000 SEK (10 000 USD)</p>
-
-<h3>Patient is hospitalized but should have gone home</h3>
-<p>False positive: (When Actual Other is predicted as In-patient)</p>
-<p>This is not good for either party but it is not as severe as a False negative. We made the assumption that the hospital will discover that the patient is quite alright and then discharge them early. </p>
-
-<p>Cost estimate: 68000 * 25% = 17 000 SEK (2 000 USD )</p>
-
-<h3>Patients is in need of and gets a hospital bed</h3>
-<p>True positive: ( When Actual In-patient is predicted as In-patient )</p>
-<p>This is actually good for the patient but still incurs a cost for the hospital. It's hard to to go into the macro economic effects so we kept to the micro scenario (Hospital economics) and just assigned the average cost for an In-patient case.</p>
-
-<p>Cost estimate: 68 000 SEK (8 000 USD)
+  <h3>Patients is in need of and gets a hospital bed</h3>
+  <p>
+    True positive: ( When Actual In-patient is predicted as In-patient )
+  </p>
+  <p>
+    This is actually good for the patient but still incurs a cost for the hospital. It's hard to to go into the macro
+    economic effects so we kept to the micro scenario (Hospital economics) and just assigned the average cost for an
+    In-patient case.
+  </p>
+  <p>
+    Cost estimate: 68 000 SEK (8 000 USD)
   </p>
 </div>
 
