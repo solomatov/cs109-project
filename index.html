@@ -71,26 +71,30 @@
   <p>
     When patient arrives into a hospital's ER, medical personnel has important decisions to make. Some
     patients should be discharged immediately, some could wait, and some should be attended by a doctor
-    immediately.
+    immediately and then be hospitalized. This paper investigates if Machine Learning methods can be used as tool
+	helping the ER departments optimizing their logistics by giving an early indication if  patient needs to be
+	hospitalized.
   </p>
-  <p>
+  <h2>About the ER</h2>
+  <p>ER PRIORITIES<br>
     Here's a sample dashboard that is displayed on a large wall screen in the ER department. The dashboard
     shows the status of ER from a patient logistics perspective.
   </p>
   <img src="images/screen.png" width="900px" />
   <p>
-    Key performance measures are:
+    Key performance measures are tracked in the above dashboard are:
   </p>
   <ul>
     <li>Waiting for triage</li>
     <li>Present at ER
       <ul>
         <li>Present: Waited more than 8h</li>
-        <li>Placement decided but waitning for hospital bed</li>
+        <li>Placement decided but waiting for hospital bed</li>
       </ul>
     </li>
   </ul>
   <p>
+	ER TIMELINE<br>
     The following picture shows the typical timeline for inpatient and other patients:
   </p>
   <img src="images/er-timeline.png" />
@@ -105,18 +109,18 @@
     will require hospitalization. There's a trade off here. On one hand, we want to minimize a number of hospitalized
     patients, hospitalization is very expensive and saving money will let the hospital to provide care in more
     important areas. On the other hand, we don't want to send home a patient who will have a complication, or worse
-    die because of this. Human life and health are priceless.
+    die because of this. Human life and health are priceless but with limited resources hard decisions need to be taken and predictive analysis can help with those decisions.
   </p>
 
   <h1 id="Method">Method</h1>
   <h2>Data Gathering</h2>
   <p>
-    Our data set is the ER log, also called akutliggaren.  In the ER log patients are tracked from when
+    Our data set is the ER log. In the ER log patients are tracked from when
     they enter the ER until they exit the ER. The data in the ER log have been extracted from the hospital's
     main system for  keeping electronic medical records and covers the majority of the ER wards in the
     reception area.
   </p>
-  <h2>EDA</h2>
+  <h2>EDA - analyzing the data and it's features</h2>
   <p>
     The Er Log the project has access to has 100+ fields and one defensive initial idea are to focus on the triage
     data. The first examination plus the medical history of the patient are what nurses and doctor are using to assess
@@ -165,7 +169,7 @@
   </p>
   <img src="images/inpatient-others.png" />
   <p>
-    As we see, there're much more others than inpatients.
+    As we see, there're much more Others than Inpatients  which gives us an unbalanced data set with about four Other patienets for every Inpatient.
   </p>
   <p>
     On this chart we display histograms of different variables by inpatient/other status:
@@ -175,7 +179,6 @@
     As we see, there's a difference in distribution in almost all variables. This gives us hope that we can
     predict whether the patient will be inpatient or outpatient.
   </p>
-  <h2>Predictions Pipeline</h2>
   <p>
     As input variables we use aforementioned vital parameters, patient age, and date information. We separated data
     into training and tests set with 20% data in the test set and used test set only for final evaluation so that
