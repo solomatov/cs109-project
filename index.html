@@ -259,7 +259,7 @@
     matrix served as input to our cost function were we applied the following costs:
   </p>
 
-  <h3>Patient should be sent home</h3>
+  <h3>Should be sent home</h3>
   <p>
     True negatives ( When Actual Other is Predicted as Other )
   </p>
@@ -271,7 +271,7 @@
   <p>Cost estimate: 0</p>
 
 
-  <h3>Patient needs hospitalization but is sent home</h3>
+  <h3>Needs hospitalization but is sent home</h3>
   <p>
     False negative ( When Actual In-patient is predicted as Other )
   </p>
@@ -288,7 +288,7 @@
     Cost estimate: 85 000 SEK (10 000 USD)
   </p>
 
-  <h3>Patient is hospitalized but should have gone home</h3>
+  <h3>Hospitalized but should have gone home</h3>
   <p>
     False positive: (When Actual Other is predicted as In-patient)
   </p>
@@ -300,7 +300,7 @@
     Cost estimate: 68000 * 25% = 17 000 SEK (2 000 USD )
   </p>
 
-  <h3>Patients is in need of and gets a hospital bed</h3>
+  <h3>In need of and gets a hospital bed</h3>
   <p>
     True positive: ( When Actual In-patient is predicted as In-patient )
   </p>
@@ -311,6 +311,23 @@
   </p>
   <p>
     Cost estimate: 68 000 SEK (8 000 USD)
+  </p>
+
+  <h1>Conclusion</h1>
+  <p>
+    In this project, we extracted the data from the database, cleaned it up, performed exploratory data analaysis,
+    then choosen machine learning methods, applied, and compared them.  We learned how to use git in collaborative
+    setting with IPython notebooks, had experience of collaborating with the team over the internet in different time
+    zones.
+  </p>
+  <p>
+    We used accuracy, AUC and cost matrix as criteria for comparing the models. According to all the criteria, the
+    best model is gradient boosting, which is an ensemble variation of a decision tree model. Cost matrix is the
+    most realistic cost model among the ones we used, unfortunately, we used it to compare the models with the
+    default threshold instead of finding the optimal threshold which could be improved with further work.
+  </p>
+  <p>
+    TODO
   </p>
 </div>
 
